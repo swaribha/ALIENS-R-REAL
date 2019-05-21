@@ -39,8 +39,9 @@ submit.on("click", function () {
         if (inputValue != "") {
 
             userSelectValue[id] = inputValue;
+            inputElement.property("value","");
         }
-        // inputElement.property("value"," ");
+         
     })
     console.log(userSelectValue);
     //     var result = users.filter(search, query);
@@ -60,11 +61,11 @@ submit.on("click", function () {
     console.log(filterTableData);
 
 
-    // filteredData.forEach((observation)=> {
-    //     var row = tbody.append("tr");
-    //     Object.entries(observation).forEach(([key, value]) => {
-    //         var cell = tbody.append("td");
-    //         cell.text(value);
-    //     });
-    // })
+    filterTableData.forEach((observation)=> {
+        var row = tbody.append("tr");
+        Object.entries(observation).forEach(([key, value]) => {
+            var cell = tbody.append("td");
+            cell.text(value);
+        });
+    })
 });
